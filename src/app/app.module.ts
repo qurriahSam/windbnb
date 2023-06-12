@@ -10,14 +10,14 @@ import { MatCardModule } from '@angular/material/card';
 
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CardComponent } from './components/card/card.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, CardComponent],
+  declarations: [AppComponent, NavbarComponent, CardComponent, HomeComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatSlideToggleModule,
     MatButtonModule,
     MatCardModule,
   ],
