@@ -7,17 +7,29 @@
   />
   <mat-card-content class="ps-3">
     <div class="container flex py-2 mb-0 items-center">
-      <mat-chip
-        *ngIf="house?.superHost"
-        class="me-3 border border-zinc-400 bg-white h-6"
-        ><span class="uppercase font-bold text-[8px] p-0 text-zinc-600"
-          >super host</span
-        ></mat-chip
-      >
-      <p class="mb-0 text-zinc-700">
-        {{ house?.type }}. {{ house?.beds ? house?.beds + " beds" : null }}
+      <div class="container flex items-center">
+        <mat-chip
+          *ngIf="house?.superHost"
+          class="me-3 border border-zinc-400 bg-white h-6"
+          ><span class="uppercase font-bold text-[8px] p-0 text-zinc-600"
+            >super host</span
+          ></mat-chip
+        >
+        <p class="mb-0 text-zinc-700">
+          {{ house?.type }}. {{ house?.beds ? house?.beds + " beds" : null }}
+        </p>
+      </div>
+      <p class="flex items-center">
+        <mat-icon
+          aria-hidden="false"
+          aria-label="star"
+          fontIcon="star"
+          class="text-rose-500"
+        ></mat-icon>
+        <span> {{ house?.rating }}</span>
       </p>
     </div>
+
     <p>{{ house?.title }}</p>
   </mat-card-content>
 </mat-card>
