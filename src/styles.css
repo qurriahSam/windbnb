@@ -6,7 +6,15 @@ body {
 }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: "Montserrat", sans-serif !important;
+}
+
+.mat-typography {
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  line-height: 20px;
+  /* font-family: Roboto, sans-serif; */
+  letter-spacing: 0.0178571429em;
 }
 
 @tailwind base;
