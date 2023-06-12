@@ -1,11 +1,23 @@
-<mat-card class="max-w-xs m-7 rounded-2xl">
+<mat-card class="w-72 m-7 rounded-2xl h-60">
   <img
     mat-card-image
-    src="https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=2255&q=80"
-    alt="Photo of a Shiba Inu"
+    class="h-40 rounded-2xl"
+    [src]="house?.photo"
+    alt="Photo of a House"
   />
-  <mat-card-content class="ps-2">
-    <p class="py-2 mb-0">stylist apartment in center of the city</p>
-    <p>stylist apartment in center of the city</p>
+  <mat-card-content class="ps-3">
+    <div class="container flex py-2 mb-0 items-center">
+      <mat-chip
+        *ngIf="house?.superHost"
+        class="me-3 border border-zinc-400 bg-white h-6"
+        ><span class="uppercase font-bold text-[8px] p-0 text-zinc-600"
+          >super host</span
+        ></mat-chip
+      >
+      <p class="mb-0 text-zinc-700 text-xs">
+        {{ house?.type }}. {{ house?.beds ? house?.beds + " beds" : null }}
+      </p>
+    </div>
+    <p>{{ house?.title }}</p>
   </mat-card-content>
 </mat-card>
