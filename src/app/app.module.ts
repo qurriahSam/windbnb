@@ -10,13 +10,18 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
+import { NgIf } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CardComponent } from './components/card/card.component';
 import { HomeComponent } from './components/home/home.component';
+import { FilterComponent } from './components/filter/filter.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, CardComponent, HomeComponent],
+  declarations: [AppComponent, NavbarComponent, CardComponent, HomeComponent, FilterComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -25,6 +30,10 @@ import { HomeComponent } from './components/home/home.component';
     MatCardModule,
     MatChipsModule,
     MatIconModule,
+    MatInputModule,
+    FormsModule,
+    NgIf,
+    MatFormFieldModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
