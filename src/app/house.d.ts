@@ -9,3 +9,8 @@ export interface House {
   beds: number | null;
   photo: string;
 }
+
+export interface SearchDetails {
+  city: string;
+  guests: number;
+}
