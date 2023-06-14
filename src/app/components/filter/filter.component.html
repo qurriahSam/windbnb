@@ -1,18 +1,59 @@
-<mat-form-field class="example-form-field">
-  <mat-label>Town</mat-label>
-  <input
-    matInput
-    type="text"
-    [(ngModel)]="country"
-    class="border-2 border-rose-500"
-  />
-  <button
-    *ngIf="country"
-    matSuffix
-    mat-icon-button
-    aria-label="Clear"
-    (click)="country = ''"
-  >
-    <mat-icon>close</mat-icon>
-  </button>
-</mat-form-field>
+<div class="container">
+  <form #staysFilterForm="ngForm" class="md:flex">
+    <div class="container">
+      <label
+        class="after:content-['*'] after:ml-0.5 after:text-red-500 block font-medium text-slate-700 mt-2"
+      >
+        Location
+      </label>
+      <input
+        [(ngModel)]="search.location"
+        type="text"
+        name="location"
+        class="form-input rounded-lg text-xs focus:border-rose-500 ring-rose-500 mt-1"
+        placeholder="you@example.com"
+        required
+        #location="ngModel"
+      />
+      <div
+        [hidden]="location.valid || location.pristine"
+        class="alert alert-danger"
+      >
+        Location is required
+      </div>
+    </div>
+    <div class="container">
+      <label
+        class="after:content-['*'] after:ml-0.5 after:text-red-500 block font-medium text-slate-700 mt-2"
+      >
+        Guests
+      </label>
+      <input
+        [(ngModel)]="search.guests"
+        type="number"
+        name="guests"
+        class="form-input rounded-lg text-xs focus:border-rose-500 ring-rose-500 mt-1"
+        placeholder="3"
+        required
+        #guests="ngModel"
+      />
+      <div
+        [hidden]="guests.valid || guests.pristine"
+        class="alert alert-danger"
+      >
+        Guests is required
+      </div>
+    </div>
+    <div>
+      <button mat-raised-button color="accent" class="block mt-6">
+        <mat-icon
+          aria-hidden="false"
+          aria-label="star"
+          fontIcon="search"
+          class="mb-0 mr-0 font-bold"
+        ></mat-icon>
+        Search
+      </button>
+    </div>
+  </form>
+</div>
