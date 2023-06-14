@@ -45,7 +45,12 @@
       </div>
     </div>
     <div>
-      <button mat-raised-button color="accent" class="block mt-6">
+      <button
+        mat-raised-button
+        color="accent"
+        class="block mt-6"
+        [disabled]="!staysFilterForm.form.valid"
+      >
         <mat-icon
           aria-hidden="false"
           aria-label="star"
