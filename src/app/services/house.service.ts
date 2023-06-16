@@ -15,8 +15,16 @@ export class HouseService {
     return houses;
   }
 
-  filterHouses(searchTerms: SearchDetails): Observable<House[]> {
-    const houses = of(STAYS);
+  filterHouses(searchTerms: SearchDetails): Observable<House[] | void> {
+    const houses = of(STAYS).pipe(
+      map((stays) => {
+        stays.filter(
+          (stay) =>
+            stay.city === searchTerms.city &&
+            searchTerms.guests <= stay.maxGuests
+        );
+      })
+    );
     return houses;
   }
 }
