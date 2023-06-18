@@ -8,15 +8,7 @@ import { HouseService } from 'src/app/services/house.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
-  houses: House[] = [];
+  houses$ = this._house.houses$;
 
   constructor(private _house: HouseService) {}
-
-  ngOnInit() {
-    this.getHouses();
-  }
-
-  getHouses() {
-    this._house.getHouses().subscribe((houses) => (this.houses = houses));
-  }
 }
