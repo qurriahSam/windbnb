@@ -1,5 +1,5 @@
 <div class="container">
-  <form #staysFilterForm="ngForm" class="md:flex">
+  <form #staysFilterForm="ngForm" class="md:flex" (ngSubmit)="filterHouses()">
     <div class="container">
       <label
         class="after:content-['*'] after:ml-0.5 after:text-red-500 block font-medium text-slate-700 mt-2"
@@ -7,7 +7,7 @@
         Location
       </label>
       <input
-        [(ngModel)]="search.location"
+        [(ngModel)]="search.city"
         type="text"
         name="location"
         class="form-input rounded-lg text-xs focus:border-rose-500 ring-rose-500 mt-1"
