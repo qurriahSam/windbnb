@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { House } from 'src/app/house';
 import { HouseService } from 'src/app/services/house.service';
 
 @Component({
