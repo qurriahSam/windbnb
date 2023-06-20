@@ -1,1 +1,9 @@
-<p>filter-items works!</p>
+<div class="container" *ngIf="houses$ | async as houses">
+  <div class="container mx-auto px-4 flex justify-between items-center mt-16">
+    <h2 class="font-extrabold">Stays in Finland</h2>
+    <p>{{ houses.length }} Stays</p>
+  </div>
+  <div class="container mx-auto px-4 flex flex-wrap justify-center">
+    <app-card *ngFor="let house of houses" [house]="house"></app-card>
+  </div>
+</div>
