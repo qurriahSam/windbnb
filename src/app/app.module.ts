@@ -19,9 +19,10 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { CardComponent } from './components/card/card.component';
 import { HomeComponent } from './components/home/home.component';
 import { FilterComponent } from './components/filter/filter.component';
+import { FilterItemsComponent } from './components/filter-items/filter-items.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, CardComponent, HomeComponent, FilterComponent],
+  declarations: [AppComponent, NavbarComponent, CardComponent, HomeComponent, FilterComponent, FilterItemsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
