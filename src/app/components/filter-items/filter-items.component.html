@@ -6,4 +6,10 @@
   <div class="container mx-auto px-4 flex flex-wrap justify-center">
     <app-card *ngFor="let house of houses" [house]="house"></app-card>
   </div>
+  <div
+    class="container flex justify-center items-center h-96"
+    *ngIf="houses.length < 1"
+  >
+    <p>no houses</p>
+  </div>
 </div>
