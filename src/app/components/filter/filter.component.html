@@ -1,6 +1,10 @@
 <div class="container">
-  <form #staysFilterForm="ngForm" class="md:flex" (ngSubmit)="filterHouses()">
-    <div class="container">
+  <form
+    #staysFilterForm="ngForm"
+    class="md:flex justify-center"
+    (ngSubmit)="filterHouses()"
+  >
+    <div>
       <label
         class="after:content-['*'] after:ml-0.5 after:text-red-500 block font-medium text-slate-700 mt-2"
       >
@@ -10,8 +14,9 @@
         [(ngModel)]="search.city"
         type="text"
         name="location"
-        class="form-input rounded-lg text-xs focus:border-rose-500 ring-rose-500 mt-1"
+        class="rounded-lg text-xs focus:border-rose-500 ring-rose-500 mt-1"
         placeholder="you@example.com"
+        size="30"
         required
         #location="ngModel"
       />
@@ -22,7 +27,7 @@
         Location is required
       </div>
     </div>
-    <div class="container">
+    <div>
       <label
         class="after:content-['*'] after:ml-0.5 after:text-red-500 block font-medium text-slate-700 mt-2"
       >
@@ -32,8 +37,9 @@
         [(ngModel)]="search.guests"
         type="number"
         name="guests"
-        class="form-input rounded-lg text-xs focus:border-rose-500 ring-rose-500 mt-1"
+        class="rounded-lg text-xs border-zinc-200 focus:border-rose-500 ring-rose-500 mt-1"
         placeholder="3"
+        size="40"
         required
         #guests="ngModel"
       />
@@ -48,7 +54,7 @@
       <button
         mat-raised-button
         color="accent"
-        class="block mt-6"
+        class="block mt-6 md:mt-7 ms-7"
         [disabled]="!staysFilterForm.form.valid"
         routerLink="/search"
       >
