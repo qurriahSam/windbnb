@@ -10,16 +10,20 @@
       >
         Location
       </label>
-      <input
+      <select
         [(ngModel)]="search.city"
         type="text"
         name="location"
-        class="rounded-lg text-xs focus:border-rose-500 ring-rose-500 mt-1"
+        class="rounded-lg text-xs focus:border-rose-500 ring-rose-500 mt-1 w-52"
         placeholder="you@example.com"
-        size="30"
         required
         #location="ngModel"
-      />
+      >
+        <option value="Helsinki">Helsinki</option>
+        <option value="Turku">Turku</option>
+        <option value="Oulu">Oulu</option>
+        <option value="Vaasa">Vaasa</option>
+      </select>
       <div
         [hidden]="location.valid || location.pristine"
         class="alert alert-danger"
