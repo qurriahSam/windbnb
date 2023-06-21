@@ -47,7 +47,7 @@ Windbnb is a small-scale vacation rental platform inspired by the popular Airbnb
 - [Angular](https://angular.io)
 - [Angular-Material](https://material.angular.io)
 - [Tailwind](https://tailwindcss.com/)
-- [Material-Icons](https://fonts.google.com/icons?icon.query=sta)
+- [Material-Icons](https://fonts.google.com/)
 
 ## Features
 
