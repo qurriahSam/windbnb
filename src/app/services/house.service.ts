@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Subject, combineLatest, map, of, tap } from 'rxjs';
+import { BehaviorSubject, Subject, combineLatest, map, of, tap } from 'rxjs';
 
 import { STAYS } from 'src/stays';
-import { House, SearchDetails } from '../house';
+import { SearchDetails } from '../house';
 
 @Injectable({
   providedIn: 'root',
@@ -17,13 +17,13 @@ export class HouseService {
 
   filterHousesFunc(searchDetails: SearchDetails) {
     this.filterHousesSubject.next(searchDetails);
+    this.filteredParamsFunc(searchDetails);
   }
 
   filteredHouses$ = combineLatest([
     this.houses$,
     this.filterHousesAction$,
   ]).pipe(
-    tap((result) => console.log(result)),
     map(([houses, searchParams]) =>
       houses.filter(
         (house) =>
@@ -32,4 +32,15 @@ export class HouseService {
       )
     )
   );
+
+  private filteredParamsSubject = new BehaviorSubject<SearchDetails>({
+    city: 'Helsinki',
+    guests: 1,
+  });
+
+  filteredParamsAction$ = this.filteredParamsSubject.asObservable();
+
+  filteredParamsFunc(searchDetails: SearchDetails) {
+    this.filteredParamsSubject.next(searchDetails);
+  }
 }
