@@ -3,7 +3,7 @@
     class="flex md:flex-row justify-between"
     [class]="hideFilter ? 'flex-col' : 'flex-row'"
   >
-    <div class="mb-7">
+    <div class="mb-7 cursor-pointer" routerLink="">
       <img src="../../../assets/logo.png" alt="Logo" />
     </div>
     <div
@@ -11,8 +11,12 @@
       (click)="showFilter()"
       *ngIf="hideFilter"
     >
-      <p class="mb-0 px-6">{{ location }}, Finland</p>
-      <p class="border mb-0 px-4 h-10 pt-2 text-neutral-500">Add Guests</p>
+      <div *ngIf="filterParams$ | async as params" class="flex">
+        <p class="mb-0 px-6 pt-2">{{ params.city }}, Finland</p>
+        <p class="border mb-0 px-4 h-10 pt-2 text-neutral-500">
+          {{ params.guests }}
+        </p>
+      </div>
 
       <mat-icon
         aria-hidden="false"
