@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
-import { FilterComponent } from './components/filter/filter.component';
+import { FilterItemsComponent } from './components/filter-items/filter-items.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'search', component: FilterComponent },
+  { path: 'search', component: FilterItemsComponent },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
